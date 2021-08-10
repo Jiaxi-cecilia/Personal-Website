@@ -1,0 +1,468 @@
+*{
+   margin: 0;
+   padding: 0;
+   font-family: 'Shadows Into Light', cursive;
+}
+
+/*<body><section class="header"><nav> and <nav><ul> and <nav><ul><li> and <a>*/
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(153, 157, 160, 0.404), rgba(153, 157, 160, 0.404)),  url(images/bg1.jpeg);
+    background-position:center;
+    background-size:cover;
+    position:relative;
+}
+
+nav{                                              /*flex container*/
+    display: flex;
+    padding:2% 6%;                                /*  top and bottom;left and right*/
+    justify-content: space-between;
+    align-items: center;                           /*align the items accorsing to the corss axis*/
+
+}
+
+nav img{
+    width: 100px;
+}
+
+.nav-links{                                      /*this is one of the flex item:1 1 0, and will allow the item to grow as long as its windowns size*/
+    flex: 1;                                    /*flex grow/shrink/basis left*/
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;                              /*it will remove all the bullet point*/
+    display:inline-block;
+    padding:8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    color: whitesmoke;
+    text-decoration: none;
+    font:20px;
+}
+
+.nav-links ul li::after{          /*will append on the top orr bottom of li*/
+    content: "";
+    width: 0%;
+    height: 5px;
+    background: whitesmoke;
+    display:block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{            /*after the mousee hover*/
+    width: 100%;
+}
+
+/*##################################################*/
+
+
+/*<body><section class="header"><div="information">*/
+.information{
+    color: whitesmoke;
+    width: 90%;
+    position: absolute;
+    top: 30%;
+    left:10%;
+    text-align: left;
+}
+
+.information h1{
+    font-size: 64px;
+    color:wheat
+}
+.information h2{
+    margin: 5px 0px 5px;   /*10 for the top, 10 for bottom, left and right are 0*/
+    font-size: 24px;
+}
+.information a{
+    color:whitesmoke;}
+.information a:hover{
+    color: rosybrown;
+    transition:1s;
+}
+
+nav .fas{
+    display: none;
+}  /*the icon for the large screen will be undisplayed*/
+
+@media(max-width:700px){
+    .information h1{
+        font-size: 28px;
+    }
+    .information h2{
+        margin: 1px 0px 1px;   /*10 for the top, 10 for bottom, left and right are 0*/
+        font-size: 20px;}
+
+    .nav-links ul li{
+        display:block;
+    }
+
+    .nav-links{
+        position: absolute;
+        background:rosybrown;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index:2;
+        transition: 1s;
+    }
+    nav .fas{
+        display: block;
+        color: white;
+        margin: 10px;
+        font-size: 40px;
+        cursor: pointer;
+    } 
+    .nav-links ul{
+        padding:30px;
+    }
+}
+
+
+/*<body><section class="about"*/
+.about{
+   width: 80%;
+   margin: auto;
+   text-align: left;
+   padding-top:100px;
+   
+}
+.row{
+    display:flex;
+    justify-content: space-between;
+    align-items: center; }
+.col1{
+    flex-basis: 68%;
+    position: relative;
+}
+.col2{
+    flex-basis: 32%;
+    position: relative;
+}
+.col1 h1{
+    font-size: 28px;
+    font-weight: 600;
+    
+}
+.col1 p{
+    font-size: 20px;
+    font-weight: 300;
+    padding: 10px;
+}
+.col2 img{
+    width: 100%;
+    margin: 30px 10px 10px 20px;
+}
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;
+    }
+}
+
+/*SKILL Sections######################################*/
+.skills{
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    padding-top:100px;
+ }
+ .div0 h1{
+     font-size: 28px;
+     font-weight: 600;
+    }
+.totaldiv1{
+    display: flex;
+}
+.div1{
+    flex:1;
+    background-color: rgba(188, 143, 143, 0.147);
+    border-radius: 10px;
+    margin:20px;
+}
+.div1 p{
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    margin:40px 20px 20px 20px;
+    }
+.div2{
+    flex:1;
+    background-color: rgba(188, 143, 143, 0.469);
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+}
+.div2 li{
+    margin:5px;
+}
+.div3{
+    flex:1;
+    background-color: rgba(188, 143, 143, 0.729);
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+}
+.div3 li{
+    margin:5px;
+}
+
+@media(max-width: 700px){
+    .totaldiv1{
+        flex-direction: column;
+    }
+}
+
+/*Education Sections######################################*/
+
+.education{
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    padding-top:100px;
+ }
+ 
+ .edu1 h1{
+    font-size: 28px;
+    font-weight: 600;}
+
+.edu2{
+    display:flex;
+    align-items: center;  
+    background-color: rosybrown; 
+    border-radius: 10px;
+    margin-top: 20px; 
+}
+.edu21{
+    flex-basis: 60%;
+    text-align: center;
+}
+.edu21 h1{
+    font-size: 24px;
+    font-weight: 600;
+}
+.edu21 p{
+    font-size: 20px;
+    font-weight: 300;
+    margin: 10px;
+}
+.edu22{
+    flex-basis:40%;
+}
+.edu22 img{
+    width: 40%;
+    margin-left:100px;
+    margin-top: 10px;
+}
+@media(max-width: 700px){
+    .edu2{
+        flex-direction: column;
+    }
+}
+
+
+/*experience############*/
+.experience{
+    width: 80%;
+    margin:auto ;
+    text-align: left;
+    padding-top: 100px;
+ }
+
+ .timeline{
+    background-color: rgba(188, 143, 143, 0.729);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(15px);
+    overflow:hidden;
+    position:relative;
+    padding-top: 50px;
+    box-shadow: 0px 20px 53px -30px rgba(95, 102, 173, 0.566816);
+    border-radius: 10px;}
+
+  
+.timeline h3{
+font-size: 28px;
+font-weight: 600;
+line-height: 30px;
+color: black;
+}
+  
+
+
+.box{
+    width:100%;
+    background:#fbfcfd;
+    margin-top:100px;}
+    
+    
+.container{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    }
+
+.lines{
+    margin-left:40px;
+    margin-top:6px;}
+              
+.dot{
+    width:14px;
+    height:14px;
+    background: #D1D6E6;
+    border-radius:7px;
+    }
+        
+.line{
+    height:150px;
+     width:2px;
+    background: #D1D6E6;
+    margin-left:5.3px;
+        }
+      
+.cards{
+    flex:1;
+    margin-left:12px;
+    margin-right: 20px;
+    transform:translateY(-50px);}
+
+.card{
+    width:100%;
+    padding-top:25px;
+    margin-bottom:20px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 16px 15px -10px rgba(105, 96, 215, 0.0944602);
+    }
+
+.card h4{         
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 19px;
+    margin-left:25px;
+    margin-bottom:8px;
+    color: #2B2862;
+}
+          
+.card p{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #2B2862;
+    margin-left:25px;
+    }
+          
+
+
+
+
+
+
+ .download {
+     display:flex;
+     width: 80%;
+     margin:auto;
+     text-align: left;
+     padding-top: 100px;
+    }
+        
+.div1{
+    flex:40%;
+    background-color: rgba(188, 143, 143, 0.489);
+    padding-top: 50px;
+    box-shadow: 0px 20px 53px -30px rgba(95, 102, 173, 0.566816);
+    border-radius: 10px;
+    text-align: center;}
+
+ .div1 h1{
+    font-weight: 600;
+    font-size: 28px;
+    color: black;
+    }
+
+.div1 h2{
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    }
+.div1 h2 li{
+    display:flex;
+    justify-content: center;
+}
+.div1 h2 li a{
+    margin-top: 15px;
+    color: black;
+    }
+
+.div1 h2 li a:hover{
+    color: whitesmoke;
+    transition:0.5s;
+            }
+
+.contact {
+    flex:60%;
+    margin-left: 10px;
+    background-color:darkgrey;
+    border-radius: 10px;
+} 
+.h1{
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.contact p{
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+.contact #name{
+    margin-left: 100px;
+    font-size: 18px;
+    width:70%;
+    border:none;
+    border-bottom: 2px solid rgb(226, 212, 212);
+    background: none;
+}
+
+#email{
+    margin-left: 100px;
+    font-size: 18px;
+    width:70%;
+    border:none;
+    border-bottom: 2px solid rgb(226, 212, 212);
+    background: none;
+}
+#message{
+    margin-left: 100px;
+    font-size: 18px;
+    width:70%;
+    border:none;
+    border-bottom: 2px solid rgb(226, 212, 212);
+    background: none;
+}
+button{
+    margin-left: 100px;
+    font-size: 18px;
+    width:20%;
+    border:none;
+    border-radius: 10px;
+    color: whitesmoke;
+    background-color: rosybrown;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media(max-width: 700px){
+    .download{
+        flex-direction: column;
+    }
+}
